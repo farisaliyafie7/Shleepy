@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQH-lc-6yF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sound-->
+        <scene sceneID="pox-ve-Wks">
+            <objects>
+                <viewController id="TQH-lc-6yF" customClass="SoundVC" customModule="Group6MC3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q8J-u0-1Qx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="qXX-E5-vRo">
+                                <rect key="frame" x="-7" y="-7" width="427" height="909"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Relaxing Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAU-7x-W1b">
+                                <rect key="frame" x="36" y="65" width="218" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.99681276080000003" green="0.652885139" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rainforest Sound" translatesAutoresizingMaskIntoConstraints="NO" id="Ga9-rb-6Pz">
+                                <rect key="frame" x="45" y="173" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rain Sound" translatesAutoresizingMaskIntoConstraints="NO" id="NOl-HZ-Hw5">
+                                <rect key="frame" x="243" y="173" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Waves Sound" translatesAutoresizingMaskIntoConstraints="NO" id="jvJ-Di-utf">
+                                <rect key="frame" x="45" y="373" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Campfire Sound" translatesAutoresizingMaskIntoConstraints="NO" id="gpu-vO-8gO">
+                                <rect key="frame" x="243" y="380" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thunder Sound" translatesAutoresizingMaskIntoConstraints="NO" id="mOS-YR-xEK">
+                                <rect key="frame" x="45" y="585" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Wind Sound" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-j2-kOg">
+                                <rect key="frame" x="243" y="585" width="125" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T24-ci-seU">
+                                <rect key="frame" x="85" y="225.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="forestPlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="5tX-iG-mMI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xjl-Ed-gE5">
+                                <rect key="frame" x="283" y="225.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="rainPlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="ETT-jI-aMc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4x-Ge-ZFY">
+                                <rect key="frame" x="85" y="425.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="wavePlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="5V5-Vw-IsQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cr-2l-fki">
+                                <rect key="frame" x="283" y="432.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="firePlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="S67-Zf-fVb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nf-rW-wSf">
+                                <rect key="frame" x="85" y="637.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="thunderPlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="KE7-YF-a5p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-3H-VpV">
+                                <rect key="frame" x="283" y="637.5" width="45" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" backgroundImage="play.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="windPlayTapped:" destination="TQH-lc-6yF" eventType="touchUpInside" id="Nki-L8-R6z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MqF-Us-VeE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sound" image="music.note.list" catalog="system" id="eqc-kJ-Wjf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="firePlayOutlet" destination="7Cr-2l-fki" id="oey-gy-5Sw"/>
+                        <outlet property="fireView" destination="gpu-vO-8gO" id="F4X-4T-rml"/>
+                        <outlet property="forestPlayOutlet" destination="T24-ci-seU" id="mwr-zK-JSd"/>
+                        <outlet property="forestView" destination="Ga9-rb-6Pz" id="keD-IA-5zR"/>
+                        <outlet property="rainPlayOutlet" destination="Xjl-Ed-gE5" id="D21-er-9Po"/>
+                        <outlet property="rainView" destination="NOl-HZ-Hw5" id="gcP-75-TVB"/>
+                        <outlet property="thunderPlayOutlet" destination="1nf-rW-wSf" id="pCq-7y-eP2"/>
+                        <outlet property="thunderView" destination="mOS-YR-xEK" id="Nbl-PL-R3d"/>
+                        <outlet property="wavePlayOutlet" destination="R4x-Ge-ZFY" id="RGX-3Y-PLa"/>
+                        <outlet property="waveView" destination="jvJ-Di-utf" id="YWN-HF-mBf"/>
+                        <outlet property="windPlayOutlet" destination="zcw-3H-VpV" id="7V2-aJ-kIh"/>
+                        <outlet property="windView" destination="LtO-j2-kOg" id="ERX-F4-lsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVy-KX-5FP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-886.95652173913049" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="414" height="896"/>
+        <image name="Campfire Sound" width="125" height="150"/>
+        <image name="Rain Sound" width="125" height="150"/>
+        <image name="Rainforest Sound" width="125" height="150"/>
+        <image name="Thunder Sound" width="125" height="150"/>
+        <image name="Waves Sound" width="125" height="150"/>
+        <image name="Wind Sound" width="125" height="150"/>
+        <image name="music.note.list" catalog="system" width="128" height="113"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
