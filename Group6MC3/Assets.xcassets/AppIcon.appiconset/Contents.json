@@ -1,49 +1,49 @@
 {
   "images" : [
     {
-      "filename" : "shleepy40.png",
+      "filename" : "Shleepy40.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "shleepy60.png",
+      "filename" : "Shleepy60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "shleepy58.png",
+      "filename" : "Shleepy58.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "shleepy87.png",
+      "filename" : "Shleepy87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "shleepy80.png",
+      "filename" : "Shleepy80.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "shleepy120.png",
+      "filename" : "Shleepy120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "shleepy120-1.png",
+      "filename" : "Shleepy120-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "shleepy180.png",
+      "filename" : "Shleepy180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -94,6 +94,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "Shleepy1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
