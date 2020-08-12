@@ -11,6 +11,8 @@ import Charts
 
 class StatisticVC: UIViewController, ChartViewDelegate {
 
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var pieView: PieChartView!
     //var barChart = BarChartView()
     
@@ -41,6 +43,9 @@ class StatisticVC: UIViewController, ChartViewDelegate {
                 countF += 1
             }
         }
+        let percent = Int(countS*100)/sumArray.count
+        countLabel.text = "Success Count : \(Int(countS))"
+        rateLabel.text = "Success rate : \(percent)%"
     }
     
     func setupPieChart(){
@@ -52,8 +57,8 @@ class StatisticVC: UIViewController, ChartViewDelegate {
         pieView.legend.enabled = false
         
         var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: countS, label: "Success"))
-        entries.append(PieChartDataEntry(value: countF, label: "Fail"))
+        entries.append(PieChartDataEntry(value: countS, label: "On time"))
+        entries.append(PieChartDataEntry(value: countF, label: "Oversleep"))
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
         let c1 = NSUIColor(hex: 0xFFA500)

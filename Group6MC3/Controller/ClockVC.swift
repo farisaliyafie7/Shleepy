@@ -6,8 +6,9 @@
 //  Copyright © 2020 Faris Ali Yafie. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
-class ClockVC: UIViewController {
+class ClockVC: UIViewController, AVAudioPlayerDelegate {
     
     
     @IBOutlet weak var sleepScheduleOutlet: UIButton!
@@ -21,7 +22,14 @@ class ClockVC: UIViewController {
     @IBOutlet weak var waketimeLabel: UILabel!
     
     let set = SetSchedule()
+    let setting = SettingVC()
+    
+     let alert = UIAlertController(title: "Alarm", message: "It's time to wake up!", preferredStyle: .alert)
+    var audioPlayer : AVAudioPlayer!
+    var snoozeTemp : String = ""
     var timer = Timer()
+    var timer2 = Timer()
+    var timer3 = Timer()
     var isOrange : Bool = false
     var bedRecieved : String = ""
     var wakeRecieved : String = ""
@@ -120,8 +128,107 @@ class ClockVC: UIViewController {
         }
     }
     
-    @IBAction func unwindToHome (_ sender:UIStoryboardSegue){
+        func alarmSound(){
+            // set alarm sound
+            if setting.defaults.string(forKey: "Sound") == "Noise"{
+                playSound("Annoying_Alarm2")
+            }
+            else if setting.defaults.string(forKey: "Sound") == "Calm"{
+                playSound("Relaxing_Alarm2")
+            }
+            else if setting.defaults.string(forKey: "Sound") == "Mute"{
+
+            }
+            
+        }
         
+        func vibrate(){
+            //vibrate phone first
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            //set vibrate callback
+            AudioServicesAddSystemSoundCompletion(SystemSoundID(kSystemSoundID_Vibrate),nil,
+                                                  nil,
+                                                  { (_:SystemSoundID, _:UnsafeMutableRawPointer?) -> Void in
+                                                    print("callback", terminator: "") //todo
+            },
+                                                  nil)
+        }
+        
+        func cancelVibrate(){
+            AudioServicesRemoveSystemSoundCompletion(kSystemSoundID_Vibrate)
+        }
+        
+        
+        func playSound(_ soundName: String) {
+
+            let url = URL(
+                fileURLWithPath: Bundle.main.path(forResource: soundName, ofType: "mp3")!)
+
+            var error: NSError?
+
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+            } catch let error1 as NSError {
+                error = error1
+                audioPlayer = nil
+            }
+
+            if let err = error {
+                print("audioPlayer error \(err.localizedDescription)")
+            } else {
+                audioPlayer!.delegate = self
+                audioPlayer!.prepareToPlay()
+            }
+            //negative number means loop infinity
+            audioPlayer!.numberOfLoops = -1
+            audioPlayer!.play()
+        }
+        
+        func showAlarmAlert(){
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (action:UIAlertAction!) in
+                self.dismissAlarm()
+            } ))
+            alert.addAction(UIAlertAction(title: "Snooze", style: .default, handler:{ (action:UIAlertAction!) in
+                self.snoozeAlarm()
+            } ))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+        func dismissAlarm(){
+            audioPlayer!.stop()
+            audioPlayer!.currentTime = 0
+            cancelVibrate()
+            timer3.invalidate()
+            
+        }
+        
+        func snoozeAlarm(){
+                
+                timer3 = Timer.scheduledTimer(timeInterval: 600, target: self, selector:#selector(doesSnooze) , userInfo: nil, repeats: true)
+            
+        }
+        
+        @objc func doesSnooze (){
+            showAlarmAlert()
+        }
+        @IBAction func unwindToHome (_ sender:UIStoryboardSegue){
+            
+        }
+       
+
     }
-   
-}
+
+    class Core {
+        static let shared = Core()
+        
+        func isNewUser() -> Bool{
+            return !UserDefaults.standard.bool(forKey: "isNewUser")
+        }
+        
+        func setIsNotNewUser(){
+            UserDefaults.standard.set(true, forKey: "isNewUser")
+        }
+    }

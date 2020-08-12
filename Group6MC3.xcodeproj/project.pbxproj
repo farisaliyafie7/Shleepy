@@ -55,6 +55,9 @@
 		AEAAB69C24C68EB400A47532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEAAB69B24C68EB400A47532 /* Assets.xcassets */; };
 		AEAAB69F24C68EB400A47532 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEAAB69D24C68EB400A47532 /* LaunchScreen.storyboard */; };
 		AEAAB6B624C6AAC900A47532 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAAB6B524C6AAC900A47532 /* BackgroundView.swift */; };
+		AEDC014024E37B5F00466E9B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDC013F24E37B5F00466E9B /* Onboarding.storyboard */; };
+		AEDC014224E37CC200466E9B /* PageCtrlOnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC014124E37CC200466E9B /* PageCtrlOnBoardingVC.swift */; };
+		AEDC014424E37D7900466E9B /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDC014324E37D7900466E9B /* OnBoardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -122,6 +125,9 @@
 		AEAAB69E24C68EB400A47532 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEAAB6A024C68EB400A47532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEAAB6B524C6AAC900A47532 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		AEDC013F24E37B5F00466E9B /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		AEDC014124E37CC200466E9B /* PageCtrlOnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCtrlOnBoardingVC.swift; sourceTree = "<group>"; };
+		AEDC014324E37D7900466E9B /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		AF3582819C08671E1170AA8D /* Pods-Group6MC3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group6MC3.release.xcconfig"; path = "Target Support Files/Pods-Group6MC3/Pods-Group6MC3.release.xcconfig"; sourceTree = "<group>"; };
 		E0794244165D7A71FBC7D6ED /* Pods-Group6MC3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group6MC3.debug.xcconfig"; path = "Target Support Files/Pods-Group6MC3/Pods-Group6MC3.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +279,7 @@
 				AE6A915F24C923AF0097A9AF /* Sound.storyboard */,
 				AEAAB69524C68EB200A47532 /* Setting.storyboard */,
 				AEAAB6B524C6AAC900A47532 /* BackgroundView.swift */,
+				AEDC013F24E37B5F00466E9B /* Onboarding.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +294,8 @@
 				AE51C00C24CFEEEA006AAFFA /* SoundVC.swift */,
 				AEAAB69324C68EB200A47532 /* SettingVC.swift */,
 				AE6A916724C9388C0097A9AF /* ReminderController.swift */,
+				AEDC014124E37CC200466E9B /* PageCtrlOnBoardingVC.swift */,
+				AEDC014324E37D7900466E9B /* OnBoardingVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				AE6024F524E1413F003AAF73 /* ActivityIndicatorOverlayView.xib in Resources */,
 				AE51C00824CFEC36006AAFFA /* ocean_waves.mp3 in Resources */,
 				AE6A915A24C923260097A9AF /* Clock.storyboard in Resources */,
+				AEDC014024E37B5F00466E9B /* Onboarding.storyboard in Resources */,
 				AE51C00624CFEC36006AAFFA /* nature_rain_thunderstorm.mp3 in Resources */,
 				AE6A915E24C9235A0097A9AF /* Statistic.storyboard in Resources */,
 			);
@@ -445,6 +455,7 @@
 				AEAAB69A24C68EB200A47532 /* Group6MC3.xcdatamodeld in Sources */,
 				AE6024EB24E1413F003AAF73 /* SegueCoordinator.swift in Sources */,
 				AE6024F824E1413F003AAF73 /* ActivityDisplaying.swift in Sources */,
+				AEDC014224E37CC200466E9B /* PageCtrlOnBoardingVC.swift in Sources */,
 				AEAAB69424C68EB200A47532 /* SettingVC.swift in Sources */,
 				AE6024EC24E1413F003AAF73 /* PHBridgeController.swift in Sources */,
 				AEAAB69024C68EB200A47532 /* AppDelegate.swift in Sources */,
@@ -467,6 +478,7 @@
 				AE6A916824C9388C0097A9AF /* ReminderController.swift in Sources */,
 				AE6024F724E1413F003AAF73 /* NavigableController.swift in Sources */,
 				AE6024FC24E1413F003AAF73 /* PHNavigationController.swift in Sources */,
+				AEDC014424E37D7900466E9B /* OnBoardingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
