@@ -67,7 +67,7 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        setOffOnLabel()
         if let bridgeController = self.bridgeController {
             if self.isStartingUp {
                 bridgeController.connect()
