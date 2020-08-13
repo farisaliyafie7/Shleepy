@@ -24,6 +24,9 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
     @IBOutlet weak var lightOnLabel: UILabel!
     @IBOutlet weak var brightSlider: UISlider!
     
+    let clock = ClockVC()
+    var timer = Timer()
+    
     lazy var segueCoordinator: PHLightControlViewControllerSegueCoordinator = HueQuickStartAppSegueCoordinator()
     var selectedBridge:PHBridgeInfo?
     var isStartingUp:Bool = true
@@ -58,6 +61,8 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
         onOffButton.layer.cornerRadius = 10
         configureNavigation()
         
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(clock.updatePerSecond) , userInfo: nil, repeats: true)
+        
         bridgeController = PHBridgeController(bridgeInfo: self.lastConnectedBridge,
                                               activityIndicator: activityIndicator,
                                               alertHandler: alertHandler,
@@ -68,6 +73,7 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setOffOnLabel()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(clock.updatePerSecond) , userInfo: nil, repeats: true)
         if let bridgeController = self.bridgeController {
             if self.isStartingUp {
                 bridgeController.connect()
@@ -77,6 +83,15 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
         }
         
         self.isStartingUp = false
+    }
+    
+    func triggerLight(){
+        if clock.clockLabel.text == lightOffLabel.text{
+            self.offColors()
+        }
+        if clock.clockLabel.text == lightOnLabel.text{
+            self.onColors()
+        }
     }
     
     func setOffOnLabel(){
@@ -247,6 +262,50 @@ extension PHLightControlViewControllerLightControls {
             lightState.brightness = Int(UInt32(self.brightValue)) as NSNumber
         }
         
+        return lightState
+    }
+    
+    // on light
+    func onColors() {
+        if let devices:[PHSDevice] = self.bridgeController?.bridge.bridgeState.getDevicesOf(.light) as? [PHSDevice] {
+            for device in devices {
+                if let lightPoint:PHSLightPoint = device as? PHSLightPoint {
+                    let lightState:PHSLightState = self.lightStateWithOn()
+                    
+                    lightPoint.update(lightState, allowedConnectionTypes: .local, completionHandler: { (responses, errors, returnCode) in
+                        // ...
+                    })
+                }
+            }
+        }
+    }
+    
+    func lightStateWithOn() -> PHSLightState {
+        lightState.on = true
+        brightSlider.value = 0
+        lightState.hue = Int(UInt32(0)) as NSNumber
+        lightState.saturation = Int(UInt32(0)) as NSNumber
+        lightState.brightness = Int(UInt32(200)) as NSNumber
+        return lightState
+    }
+    
+    // off light
+    func offColors() {
+        if let devices:[PHSDevice] = self.bridgeController?.bridge.bridgeState.getDevicesOf(.light) as? [PHSDevice] {
+            for device in devices {
+                if let lightPoint:PHSLightPoint = device as? PHSLightPoint {
+                    let lightState:PHSLightState = self.lightStateWithOff()
+                    
+                    lightPoint.update(lightState, allowedConnectionTypes: .local, completionHandler: { (responses, errors, returnCode) in
+                        // ...
+                    })
+                }
+            }
+        }
+    }
+    
+    func lightStateWithOff() -> PHSLightState {
+        lightState.on = false
         return lightState
     }
 }
