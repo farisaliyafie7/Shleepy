@@ -61,7 +61,7 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
         onOffButton.layer.cornerRadius = 10
         configureNavigation()
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(clock.updatePerSecond) , userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(triggerLight) , userInfo: nil, repeats: true)
         
         bridgeController = PHBridgeController(bridgeInfo: self.lastConnectedBridge,
                                               activityIndicator: activityIndicator,
@@ -73,7 +73,7 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setOffOnLabel()
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(clock.updatePerSecond) , userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(triggerLight) , userInfo: nil, repeats: true)
         if let bridgeController = self.bridgeController {
             if self.isStartingUp {
                 bridgeController.connect()
@@ -85,11 +85,29 @@ class PHLightControlViewController: UIViewController, NavigationHelping {
         self.isStartingUp = false
     }
     
-    func triggerLight(){
-        if clock.clockLabel.text == lightOffLabel.text{
+    @objc func triggerLight(){
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        var temp = ""
+        if hour < 10 && minute < 10{
+            temp = "0\(hour):0\(minute)"
+        }
+        else if hour < 10 {
+            temp = "0\(hour):\(minute)"
+        }
+        else if minute < 10{
+            temp = "\(hour):0\(minute)"
+        }
+        else{
+            temp = "\(hour):\(minute)"
+        }
+        
+        if  temp == lightOffLabel.text{
             self.offColors()
         }
-        if clock.clockLabel.text == lightOnLabel.text{
+        if  temp == lightOnLabel.text{
             self.onColors()
         }
     }
@@ -228,10 +246,10 @@ extension PHLightControlViewControllerLightControls {
         func lightStateWithOnOff() -> PHSLightState {
             if lightState.on.boolValue{
                 lightState.on = false
-                brightSlider.value = 200
+                brightSlider.value = 0
             }else{
                 lightState.on = true
-                brightSlider.value = 0
+                brightSlider.value = 200
                 lightState.hue = Int(UInt32(0)) as NSNumber
                 lightState.saturation = Int(UInt32(0)) as NSNumber
                 lightState.brightness = Int(UInt32(200)) as NSNumber

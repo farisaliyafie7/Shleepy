@@ -115,7 +115,7 @@
 		AE6A915D24C9235A0097A9AF /* Statistic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Statistic.storyboard; sourceTree = "<group>"; };
 		AE6A915F24C923AF0097A9AF /* Sound.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sound.storyboard; sourceTree = "<group>"; };
 		AE6A916724C9388C0097A9AF /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReminderController.swift; path = ../../ReminderController.swift; sourceTree = "<group>"; };
-		AEAAB68C24C68EB200A47532 /* Group6MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group6MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEAAB68C24C68EB200A47532 /* Shleepy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shleepy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEAAB68F24C68EB200A47532 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEAAB69124C68EB200A47532 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AEAAB69324C68EB200A47532 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		AEAAB68D24C68EB200A47532 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AEAAB68C24C68EB200A47532 /* Group6MC3.app */,
+				AEAAB68C24C68EB200A47532 /* Shleepy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			);
 			name = Group6MC3;
 			productName = Group6MC3;
-			productReference = AEAAB68C24C68EB200A47532 /* Group6MC3.app */;
+			productReference = AEAAB68C24C68EB200A47532 /* Shleepy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -639,7 +639,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AppleAcademy.Group6MC3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shleepy;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/farisaliyafie/Documents/Swift/Latihan/Group6MC3/Group6MC3/Light/HueQuickStartAppSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,7 +667,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AppleAcademy.Group6MC3;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Shleepy;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/farisaliyafie/Documents/Swift/Latihan/Group6MC3/Group6MC3/Light/HueQuickStartAppSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
